@@ -1,0 +1,283 @@
+/* ===== CSS 变量 ===== */
+:root {
+  --dark: #2d3436;
+  --blue: #0984e3;
+  --white: #ffffff;
+  --light-bg: #f8f9fa;
+  --gray: #6c757d;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --radius: 12px;
+}
+
+/* ===== 全局样式 ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--dark);
+  background: var(--light-bg);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== 头部 ===== */
+.header {
+  text-align: center;
+  padding: 60px 24px 40px;
+  background: var(--white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.name {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: 18px;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.bio {
+  font-size: 15px;
+  color: var(--gray);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* ===== 公共区块 ===== */
+.section {
+  padding: 48px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: var(--dark);
+}
+
+/* ===== 技能条 ===== */
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.skill-bar {
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: var(--blue);
+  border-radius: 4px;
+  width: 0;
+}
+
+.skill-fill.is-visible {
+  animation: fillBar 1s ease-out forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--width);
+  }
+}
+
+/* ===== 作品集 ===== */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.portfolio-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  height: 120px;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-body h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(9, 132, 227, 0.1);
+  color: var(--blue);
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ===== 时间线 ===== */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #dee2e6;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+.timeline-content h3 {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.timeline-date {
+  font-size: 13px;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+/* ===== 联系方式 ===== */
+.contact-section {
+  text-align: center;
+  border-bottom: none;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.download-btn {
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #0773c5;
+}
+
+/* ===== 页脚 ===== */
+.footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 13px;
+  color: #adb5bd;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+
+  .name {
+    font-size: 26px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
