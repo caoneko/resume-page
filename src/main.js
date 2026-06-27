@@ -1,5 +1,3 @@
-import './style.css';
-
 // 点击下载按钮时弹出提示
 const downloadButton = document.getElementById('download-btn');
 downloadButton.addEventListener('click', () => {
